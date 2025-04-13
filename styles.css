@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #00bcd4, #ff5722);
+    color: #f1f1f1;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    z-index: 1;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 0 0 15px #ffcc00;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+section {
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease both;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+p, li {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    color: #ff5722;
+}
+
+.requirements {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-left: 4px solid #00bcd4;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+}
+
+.requirements-button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.requirements-button:hover {
+    background-color: #0097a7;
+}
+
+footer {
+    background: #111;
+    padding: 30px;
+    text-align: center;
+    border-top: 2px solid #222;
+    border-radius: 12px;
+}
+
+footer a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+.player-info {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.player-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.player-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.player-card ul {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.player-card li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.close-btn {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.close-btn:hover {
+    background-color: #ff3d00;
+}
+
+.knife, .ak47, .m4a1, .basket {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    opacity: 0.2;
+    transform: rotate(-20deg);
+    z-index: 0;
+    animation: knifeAnimation 2s ease-in-out infinite alternate;
+}
+
+.ak47 {
+    bottom: 120px;
+    animation: ak47Animation 2s ease-in-out infinite alternate;
+}
+
+.m4a1 {
+    bottom: 220px;
+    animation: m4a1Animation 2s ease-in-out infinite alternate;
+}
+
+.basket {
+    bottom: 320px;
+    width: 80px;
+    animation: basketAnimation 2s ease-in-out infinite alternate;
+}
+
+@keyframes knifeAnimation {
+    0% { transform: rotate(-20deg); }
+    100% { transform: rotate(20deg); }
+}
+@keyframes ak47Animation {
+    0% { transform: rotate(-30deg); }
+    100% { transform: rotate(30deg); }
+}
+@keyframes m4a1Animation {
+    0% { transform: rotate(-40deg); }
+    100% { transform: rotate(40deg); }
+}
+@keyframes basketAnimation {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Главные в клане */
+.leaders-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.leader-card {
+    flex: 1 1 45%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #ffd700;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease both;
+}
+
+.leader-card h3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.leader-card p {
+    margin: 5px 0;
+}
+
+/* 📱 Адаптив под мобилки */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+    .player-card h3 {
+        font-size: 1.5rem;
+    }
+    .player-card li {
+        font-size: 1rem;
+    }
+    .requirements-button {
+        width: 100%;
+    }
+    .leaders-container {
+        flex-direction: column;
+    }
+}
